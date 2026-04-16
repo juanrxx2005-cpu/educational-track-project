@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Educational Track Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container my-4">
+
+<header class="text-center mb-4">
+  <h1 class="display-5">Educational Track Project</h1>
+  <p class="mb-0">Universidad de Cundinamarca - Girardot</p>
+  <p>Ingeniería de Software</p>
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Educational Track</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('idea')">Idea de Investigación</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('problema')">Planteamiento del Problema</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('objetivoG')">Objetivo General</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('objetivosE')">Objetivos Específicos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('ejecutable')">Ejecutable</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('nosotros')">Sobre Nosotros</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="imagen-banner text-center mb-4">
+  <img src="universidad.jpg" alt="Universidad" class="img-fluid rounded">
+</div>
+<main>
+
+<!-- IDEA -->
+<section id="idea" class="contenido">
+  <h2>Idea de Investigación</h2>
+  <p>
+    En la Universidad de Cundinamarca, sede Girardot, específicamente en el programa de Ingeniería de Software,
+    los proyectos académicos desarrollados por los estudiantes tienden a perderse con el paso del tiempo.
+    Esto ocurre debido a la falta de una plataforma accesible y organizada que permita su almacenamiento,
+    consulta y reutilización.
+  </p>
+  <p>
+    Esta situación limita la creatividad de los estudiantes, ya que muchas ideas se repiten o no se desarrollan
+    completamente, además de que se pierde una gran cantidad de conocimiento que podría ser aprovechado
+    por futuras generaciones.
+  </p>
+  <p>
+    Por ello, este proyecto propone la creación de un repositorio digital que permita almacenar los proyectos
+    académicos, facilitando el acceso tanto a estudiantes como docentes dentro de la comunidad universitaria
+    de la sede Girardot.
+  </p>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema" class="contenido">
+  <h2>Planteamiento del Problema</h2>
+  <p>
+    En la Universidad de Cundinamarca, sede Girardot, programa de Ingeniería de Software,
+    no se cuenta con un sistema que permita gestionar de manera centralizada los proyectos
+    académicos desarrollados por los estudiantes.
+  </p>
+  <p>
+    Como consecuencia, muchos trabajos terminan archivados o se pierden después de cada semestre,
+    sin posibilidad de ser consultados, reutilizados o mejorados.
+  </p>
+  <p>
+    Esta situación limita la generación de conocimiento, dificulta los procesos de investigación
+    y provoca que los estudiantes desarrollen proyectos similares sin ser conscientes de trabajos
+    anteriores.
+  </p>
+</section>
+
+<!-- OBJETIVOS -->
+ <section id="objetivoG" class="contenido">
+  <h2>Objetivo General</h2>
+  <p>
+    Desarrollar una plataforma digital en la Universidad de Cundinamarca, sede Girardot,
+    específicamente para el programa de Ingeniería de Software, que permita gestionar,
+    almacenar y consultar de manera organizada los proyectos académicos desarrollados
+    por los estudiantes.
+  </p>
+  <p>
+    Esta herramienta buscará facilitar el acceso a la información, promover la reutilización
+    del conocimiento y apoyar los procesos académicos e investigativos dentro de la comunidad
+    universitaria.
+  </p>
+</section>  
+
+<section id="objetivosE" class="contenido">
+  <h2>Objetivos Específicos</h2>
+  <ul>
+    <li>Almacenar proyectos</li>
+    <li>Permitir consulta</li>
+    <li>Evitar pérdida de información</li>
+  </ul>
+</section>
+
+<!-- EJECUTABLE -->
+<section id="ejecutable" class="contenido">
+
+  <!-- LOGIN -->
+  <div id="login" class="card p-3 mb-3">
+    <h3>Iniciar Sesión</h3>
+
+    <input type="text" id="correo" class="form-control mb-2" placeholder="Correo">
+
+    <select id="rol" class="form-select mb-2">
+      <option value="">Seleccione su rol</option>
+      <option value="Estudiante">Estudiante</option>
+      <option value="Jurado">Jurado</option>
+      <option value="Gestor">Gestor de Conocimiento</option>
+    </select>
+
+    <input type="password" class="form-control mb-2" placeholder="Contraseña">
+
+    <button class="btn btn-success" onclick="login()">Ingresar</button>
+  </div>
+
+  <!-- PANEL -->
+  <div id="panel" style="display:none;" class="mb-3">
+    <h3>Panel</h3>
+
+    <button class="btn btn-primary m-1" onclick="mostrarSistema('crear')">Crear Proyecto</button>
+    <button class="btn btn-primary m-1" onclick="mostrarSistema('verProyectos')">Ver Proyectos</button>
+    <button class="btn btn-primary m-1" onclick="mostrarSistema('agregarIdea')">Agregar Idea</button>
+    <button class="btn btn-primary m-1" onclick="mostrarSistema('verIdeas')">Ver Ideas</button>
+  </div>
+
+  <!-- CREAR -->
+  <div id="crear" class="box card p-3" style="display:none;">
+    <h4>Crear Proyecto</h4>
+    <input type="text" id="nombreProyecto" class="form-control mb-2" placeholder="Nombre">
+    <textarea id="descProyecto" class="form-control mb-2" placeholder="Descripción"></textarea>
+    <button class="btn btn-primary" onclick="guardarProyecto()">Guardar</button>
+  </div>
+
+  <!-- VER PROYECTOS -->
+  <div id="verProyectos" class="box" style="display:none;">
+    <h4>Proyectos</h4>
+    <ul id="listaProyectos" class="list-group"></ul>
+    <div id="detalleProyecto" class="detalle mt-2"></div>
+  </div>
+
+  <!-- IDEAS -->
+  <div id="agregarIdea" class="box card p-3" style="display:none;">
+    <h4>Agregar Idea</h4>
+    <input type="text" id="nombreIdea" class="form-control mb-2" placeholder="Nombre">
+    <textarea id="descIdea" class="form-control mb-2" placeholder="Descripción"></textarea>
+    <button class="btn btn-primary" onclick="guardarIdea()">Guardar</button>
+  </div>
+
+  <div id="verIdeas" class="box" style="display:none;">
+    <h4>Ideas</h4>
+    <ul id="listaIdeas" class="list-group"></ul>
+    <div id="detalleIdea" class="detalle mt-2"></div>
+  </div>
+
+</section>
+
+<section id="nosotros" class="contenido">
+  <h2>Sobre Nosotros</h2>
+  <p>
+    Educational Track Project es una iniciativa desarrollada por estudiantes del programa de Ingeniería de Software
+    de la Universidad de Cundinamarca, sede Girardot, con el objetivo de crear una plataforma que permita gestionar,
+    almacenar y consultar proyectos académicos de manera organizada y accesible.
+  </p>
+  <p>
+    Nuestro enfoque se centra en fortalecer la gestión del conocimiento dentro de la comunidad universitaria,
+    evitando la pérdida de información valiosa y promoviendo la reutilización de ideas y proyectos desarrollados
+    por los estudiantes a lo largo de su formación académica.
+  </p>
+  <p>
+    Buscamos ofrecer una herramienta intuitiva y funcional que facilite tanto a estudiantes como docentes el acceso
+    a proyectos anteriores, incentivando la innovación, la investigación y el desarrollo de nuevas soluciones
+    tecnológicas dentro del programa de Ingeniería de Software.
+  </p>
+</section>
+
+
+  <div class="equipo row mt-4">
+
+    <!-- JUAN -->
+    <div class="persona col-md-6 text-center">
+      <img src="juan.jpg" alt="Juan" class="img-fluid rounded-circle" style="max-width:150px;">
+      <h3 class="mt-2">Juan David Ruiz Reyes</h3>
+      <p>📧 juanrxx2005@gmail.com</p>
+      <p>📱 3503853898</p>
+    </div>
+
+    <!-- OMAR -->
+    <div class="persona col-md-6 text-center">
+      <img src="omar.jpg" alt="Omar" class="img-fluid rounded-circle" style="max-width:150px;">
+      <h3 class="mt-2">Omar Yesid Junca Gutierrez</h3>
+      <p>📧 Omaryesidjg@gmail.com</p>
+      <p>📱 3502727740</p>
+    </div>
+
+  </div>
+
+  </div>
+
+</section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</div>
+</body>
+</html>
